@@ -1,20 +1,20 @@
-Atlanta;TRUE;TRUE
-Orlando;FALSE;TRUE
-Charlotte;FALSE;TRUE
-Houston;TRUE;TRUE
-miami;TRUE;TRUE
-austin;FALSE;TRUE
-Santa clara;TRUE;TRUE
-east rutherford;TRUE;TRUE
-arlington;FALSE;TRUE
-glendale;FALSE;TRUE
-Dallas;FALSE;FALSE
-LAS VEGAS;TRUE;FALSE
-Fort Worth;FALSE;FALSE
-Columbus;TRUE;FALSE
-San Francisco;TRUE;FALSE
-Indianapolis;TRUE;FALSE
-Seattle;TRUE;FALSE
-Denver;TRUE;FALSE
-Washington;TRUE;FALSE
-PORTLAND;FALSE;FALSE
+NUEVA YORK;true;true
+LOS ANGELES;false;true
+CHICAGO;true;true
+HOUSTON;false;false
+PHOENIX;false;false
+FILADELFIA;true;false
+SAN ANTONIO;true;false
+SAN DIEGO;false;true
+DALLAS;false;true
+SAN JOSE;false;false
+AUSTIN;false;true
+LAS VEGAS;true;true
+FORT WHORT;false;false
+COLUMBUS;true;false
+CHARLOTTE;false;false
+SAN FRANCISO;true;true
+INDIANAPOLIS;true;false
+SEATTLE;true;false
+DENVER;true;false
+WASHINGTON;true;true

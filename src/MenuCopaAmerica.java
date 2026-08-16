@@ -7,15 +7,12 @@ import java.util.Scanner;
 import java.io .*;
 import java.util .*;
 
-import estructuras.*;
 import estructuras.conjuntistas.*;
 import estructuras.grafos.*;
 import estructuras.lineales.*;
 
-public class MenuCopaAmerica {
 
-
-    public class menuCopaAmerica {
+    public class MenuCopaAmerica {
         private static GrafoEtiquetado ciudades;
         private static ArbolAVL equipos;
         private static HashMap<Integer, Partido> partidos;
@@ -577,4 +574,3 @@ public class MenuCopaAmerica {
             }
         }
     }
-}
