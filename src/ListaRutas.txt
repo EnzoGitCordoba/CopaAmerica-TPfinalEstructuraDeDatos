@@ -1,0 +1,40 @@
+Atlanta;Houston;428
+Miami;Austin;675
+Orlando;Santa clara;512
+Charlotte;Glendale;399
+Houston;East Rutherford;287
+Austin;Las Vegas;734
+Santa clara;Indianapolis;629
+Glendale;Denver;481
+Dallas;Miami;378
+San Francisco;Washington;642
+Indianapolis;Portland;518
+Seattle;Arlington;209
+Orlando;Columbus;846
+Houston;Fort Worth;391
+Charlotte;Atlanta;573
+East Rutherford;Seattle;739
+Portland;San Francisco;654
+Fort Worth;Glendale;436
+Las Vegas;Dallas;822
+Denver;Miami;294
+Washington;Charlotte;481
+Santa clara;Austin;759
+Houston;Seattle;358
+Atlanta;San Francisco;605
+Orlando;Indianapolis;752
+Portland;Miami;464
+Charlotte;East Rutherford;511
+Dallas;Denver;704
+Las Vegas;Orlando;521
+Fort Worth;Washington;612
+Seattle;Columbus;398
+San Francisco;Atlanta;457
+Arlington;Santa clara;725
+Austin;Dallas;329
+Glendale;Portland;418
+East Rutherford;Houston;289
+Miami;Charlotte;539
+Orlando;Fort Worth;834
+Indianapolis;Denver;672
+Portland;Las Vegas;713

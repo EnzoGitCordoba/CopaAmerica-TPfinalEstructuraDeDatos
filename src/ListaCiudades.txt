@@ -1,0 +1,20 @@
+Atlanta;TRUE;TRUE
+Orlando;FALSE;TRUE
+Charlotte;FALSE;TRUE
+Houston;TRUE;TRUE
+miami;TRUE;TRUE
+austin;FALSE;TRUE
+Santa clara;TRUE;TRUE
+east rutherford;TRUE;TRUE
+arlington;FALSE;TRUE
+glendale;FALSE;TRUE
+Dallas;FALSE;FALSE
+LAS VEGAS;TRUE;FALSE
+Fort Worth;FALSE;FALSE
+Columbus;TRUE;FALSE
+San Francisco;TRUE;FALSE
+Indianapolis;TRUE;FALSE
+Seattle;TRUE;FALSE
+Denver;TRUE;FALSE
+Washington;TRUE;FALSE
+PORTLAND;FALSE;FALSE
