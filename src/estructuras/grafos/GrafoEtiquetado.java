@@ -496,6 +496,12 @@ public class GrafoEtiquetado {
     }
 
     public Object obtenerVertice(Object nombrePais) {
-        return buscarVertice(inicio, nombrePais).getElem();
+        // creo este metodo publico para acceder desde el menu , ya que la busqueda se hace en privado
+      Object retorno = null;
+              if( (buscarVertice(inicio, nombrePais)!= null )){
+            retorno= buscarVertice(inicio, nombrePais).getElem();
+        }
+
+        return retorno;
     }
 }
