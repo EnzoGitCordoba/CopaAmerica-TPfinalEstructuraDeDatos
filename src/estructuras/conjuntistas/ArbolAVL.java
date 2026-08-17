@@ -136,8 +136,8 @@ public class ArbolAVL {
                             n.setIzquierdo(null);
                             n.recalcularAltura(); //recalculo la altura
                         } else {
-                            borrarNodo(hijo);  //en el caso de que el elemento a borrar tenga hijos , debo buscar el candidato para remplazarlo y analizar que el sub arbol quede balanceado
-                            n.setIzquierdo(analizarBalance(hijo));
+
+                              n.setIzquierdo(borrarNodo(hijo));
                         }
                     } else {
                         exito = eliminarAux(n.getIzquierdo(), elemento);
@@ -171,54 +171,49 @@ public class ArbolAVL {
     }
 
     @SuppressWarnings({ "rawtypes" })
-    private Comparable buscarCandidato(NodoAVL n, NodoAVL padre, Object elemPadre) {
-
-        Comparable candidato = null;
-        NodoAVL hijo;
-        if (n != null) {
-            if (n.getDerecho().getDerecho() == null) {
-                candidato = n.getDerecho().getElem();
-                n.setDerecho(n.getDerecho().getIzquierdo());
-
+    private NodoAVL borrarNodo(NodoAVL n) {
+        // si tiene 2 hijos  bbuscamos candidato
+        if (n.getIzquierdo() != null && n.getDerecho() != null) {
+            if (n.getIzquierdo().getDerecho() != null) {
+                //buscamos el candidato y desenganchamos
+                n.setElem(buscarCandidato(n.getIzquierdo(), n));
             } else {
-                candidato = buscarCandidato(n.getDerecho(), n, elemPadre);
-                n.setDerecho(n.getDerecho());
+                // el candidato directo es su hijo izquierdo
+                n.setElem(n.getIzquierdo().getElem());
+                n.setIzquierdo(n.getIzquierdo().getIzquierdo()); // desenganchamos el hijo izq guardando sus subarboles
             }
             n.recalcularAltura();
-            hijo = analizarBalance(n);
-            if (padre.getElem().equals(elemPadre)) {
-                // primera interaccion, el padre se enlaza con su hijo izq balanceado
-                padre.setIzquierdo(hijo);
-            } else {
-                // demas interacciones, el padre se enlaza con su hijo der balanceado
-                padre.setDerecho(hijo);
-            }
+            return analizarBalance(n);
         }
+
+        // tiene 1 solo hijo o es hoja
+        NodoAVL sobreviviente = (n.getIzquierdo() != null) ? n.getIzquierdo() : n.getDerecho();
+        return sobreviviente;
+    }
+
+
+    @SuppressWarnings({ "rawtypes" })
+    private Comparable buscarCandidato(NodoAVL n, NodoAVL padre) {
+        Comparable candidato;
+        if (n.getDerecho().getDerecho() == null) {
+            // encontramos el mayor
+            candidato = n.getDerecho().getElem();
+            // Le asignamos a n.derecho los hijos que traía el candidato a su izquierda
+            n.setDerecho(n.getDerecho().getIzquierdo());
+        } else {
+            candidato = buscarCandidato(n.getDerecho(), n);
+        }
+
+        n.recalcularAltura();
+        if (padre.getIzquierdo() == n) {
+            padre.setIzquierdo(analizarBalance(n));
+        } else {
+            padre.setDerecho(analizarBalance(n));
+        }
+
         return candidato;
     }
 
-    private void borrarNodo(NodoAVL n) {
-        //para eliminar un nodo, debo analizar cual sera el candidato para suplir la raiz del sub arbol
-
-        if (n.getDerecho() != null && n.getIzquierdo() != null) {  // tiene hijos de ambos lados debo buscar el candidato
-            if (n.getIzquierdo().getDerecho() != null) {
-                n.setElem(buscarCandidato(n.getIzquierdo(), n, n.getElem()));
-            } else {
-                n.setElem(n.getIzquierdo().getElem());
-                n.setIzquierdo(n.getIzquierdo().getIzquierdo());
-            }
-        } else {
-            if (n.getIzquierdo() != null) {
-                n.setElem(n.getIzquierdo().getElem());
-                n.setIzquierdo(n.getIzquierdo().getIzquierdo());
-            } else {
-                n.setElem(n.getDerecho().getElem());
-                n.setDerecho(n.getDerecho().getDerecho());
-            }
-        }
-        n.recalcularAltura();
-
-    }
 
     private NodoAVL rotacionSimpleDerecha(NodoAVL pivote) {
         //nos valemos de un temporal para rotar los nodos

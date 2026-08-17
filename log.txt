@@ -1,5 +1,4 @@
 INICIO DEL SISTEMA
-se modifico de la ciudad denverla opcion 1
-
-se modifico de la ciudad denverla opcion 3
-
+se inserto el equipo ESPAÑA
+se inserto el equipo INGLATERRA
+se elimino el equipo JAMAICA
