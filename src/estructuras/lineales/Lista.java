@@ -14,7 +14,6 @@ public class Lista {
     public boolean insertar(Object elem, int pos) { //recibo el elemento que debo agregar y la posicion donde lo debo agregar
         //debo devolver true si fui capaz de insertar un elemento y false caso contrario
         boolean res = false;
-
         //creo una referencia y un entero auxiliares para recorrer la lista
         Nodo nodoAux = cabecera;
         int aux = 1;
@@ -190,7 +189,7 @@ public class Lista {
                     s += ",";
                 }
             }
-            s += "]"; //fin de la cadena
+            s += "] \n "; //fin de la cadena
         }
         return s; // return the string here
     }

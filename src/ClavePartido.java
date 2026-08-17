@@ -39,4 +39,18 @@ public class ClavePartido {
     public String getEquipoDos() {
         return equipoDos;
     }
+
+
+    public boolean equals(Object obj) {
+        boolean res = false;
+        if (obj instanceof ClavePartido) { // sirve para saber si podemos realizar un casting de obj a ClavePartido
+            ClavePartido clave = (ClavePartido) obj;
+            if (this.equipoUno.equals(clave.getEquipoUno()) && this.equipoDos.equals(clave.getEquipoDos())) {
+                res = true;
+            }
+        }
+        return res;
+    }
+
+
 }

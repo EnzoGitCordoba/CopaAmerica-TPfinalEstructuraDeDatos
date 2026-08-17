@@ -1,4 +1,1 @@
 INICIO DEL SISTEMA
-se inserto el equipo ESPAÑA
-se inserto el equipo INGLATERRA
-se elimino el equipo JAMAICA

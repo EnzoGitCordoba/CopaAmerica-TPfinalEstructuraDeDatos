@@ -1,5 +1,6 @@
 import estructuras.conjuntistas.ArbolAVL;
 import estructuras.grafos.GrafoEtiquetado;
+import estructuras.lineales.Lista;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,7 +11,7 @@ import java.util.StringTokenizer;
 
 public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     private ArbolAVL equipos = new ArbolAVL();
-    private HashMap<Integer, Partido> mapa = new HashMap<Integer, Partido>();
+    private HashMap<ClavePartido, Lista> mapa = new HashMap<ClavePartido, Lista>();
     private FileReader archivoLectura;
     private BufferedReader lector;
     private StringTokenizer split;
@@ -99,7 +100,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
 
     }
 
-    public HashMap<Integer, Partido> cargaPartidos() {
+    public HashMap<ClavePartido, Lista> cargaPartidos() {
         try {
             archivoLectura = new FileReader(
                     "src/listaPartidos.txt");
@@ -139,7 +140,17 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
                     Partido partido = new Partido(eq1.toUpperCase(), eq2.toUpperCase(), instancia, ciudad, estadio,
                             golE1,
                             golE2);
-                    mapa.put(partido.getClavePartido(), partido);
+                    ClavePartido clave= partido.getClavePartido();
+
+                    if (mapa.containsKey(clave)) {
+                        Lista listaPartidos = mapa.get(clave);
+                        listaPartidos.insertar(partido, listaPartidos.longitud() + 1);
+                    } else {
+                        Lista listaPartidos = new Lista();
+                        listaPartidos.insertar(partido, 1);
+                        mapa.put(clave, listaPartidos);
+                    }
+
                     Equipo equipo1 = (Equipo) equipos.recuperar(new Equipo(eq1.toUpperCase()));
                     Equipo equipo2 = (Equipo) equipos.recuperar(new Equipo(eq2.toUpperCase()));
                     equipo1.actualizarEquipo(golE1, golE2);

@@ -40,7 +40,7 @@ public class Ciudad {
     }
 
     public String toString() {
-        return "NOMBRE:" + nombre + ", ALOJAMIENTO: " + alojamiento + ", SEDE DE LA COPA: " + sede + "\n";
+        return "NOMBRE:" + nombre + ", ALOJAMIENTO: " + alojamiento + ", SEDE DE LA COPA: " + sede + " ";
     }
 
     public void cambiarSede() {

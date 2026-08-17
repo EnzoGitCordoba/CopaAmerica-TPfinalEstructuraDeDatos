@@ -14,7 +14,7 @@ import estructuras.lineales.*;
 public class MenuCopaAmerica {
     private static GrafoEtiquetado ciudades;
     private static ArbolAVL equipos;
-    private static HashMap<Integer, Partido> partidos;
+    private static HashMap<ClavePartido, Lista> partidos;
     private static Carga cargaDatos = new Carga();
     private static Scanner dato = new Scanner(System.in);
 
@@ -78,7 +78,7 @@ public class MenuCopaAmerica {
                     actualizarLog(log);
                     log = "-------------------------------------------------------------//PARTIDOS//----------------------------------------------------------------\n";
                     actualizarLog(log);
-                    for (Integer indice : partidos.keySet()) {
+                    for (ClavePartido indice : partidos.keySet()) {
                         log = indice + ": " + partidos.get(indice).toString();
                         actualizarLog(log);
                     }
@@ -314,7 +314,17 @@ public class MenuCopaAmerica {
                             equipo1.actualizarEquipo(golesE1, golesE2);
                             equipo2.actualizarEquipo(golesE2, golesE1);
                             Partido nuPartido = new Partido(eq1, eq2, instancia, ciudad, estadio, golesE1, golesE2);
-                            partidos.put(nuPartido.getClavePartido(), nuPartido);
+
+                           ClavePartido clave= nuPartido.getClavePartido();
+                            if (partidos.containsKey(clave)) {
+                                Lista listaPartidos = partidos.get(clave);
+                                listaPartidos.insertar(nuPartido, listaPartidos.longitud() + 1);
+                            } else {
+                                Lista listaPartidos = new Lista();
+                                listaPartidos.insertar(nuPartido, 1);
+                                partidos.put(clave, listaPartidos);
+                            }
+
                             System.out.println("El partido fue cargado correctamente");
                             textoLog = "se cargaron los datos del partido " + eq1 + "-" + eq2;
                             actualizarLog(textoLog);
@@ -372,7 +382,7 @@ public class MenuCopaAmerica {
 
     public static void consultaPartidos() {
         String eq1 = "", eq2 = "";
-        Iterator<Integer> indice = partidos.keySet().iterator();
+        Iterator<ClavePartido> indice = partidos.keySet().iterator();
         boolean encontrado = false;
         System.out.println("ingrese el nombre del equipo 1:");
         eq1 = dato.nextLine();
@@ -382,12 +392,27 @@ public class MenuCopaAmerica {
             eq2 = dato.nextLine().toUpperCase();
             if (equipos.pertenece(new Equipo(eq2))) {
                 while (indice.hasNext() && !encontrado) {
-                    Integer clave = indice.next();
-                    Partido elPartido = partidos.get(clave);
-                    if (elPartido.compararEquipos(eq1, eq2)) {
-                        encontrado = true;
-                        System.out.println(elPartido.resultado());
+
+                    ClavePartido clave = indice.next();
+
+                    Lista listadepartidos = partidos.get(clave);
+                    int i=0;
+                    Partido nuevoPartido;
+                    while((listadepartidos.recuperar(i)!=null)&&(!encontrado)){
+                        nuevoPartido= (Partido) listadepartidos.recuperar(i);
+
+                        if(nuevoPartido.compararEquipos(eq1,eq2)){
+                            encontrado=true;
+                            System.out.println(nuevoPartido.toString());
+                        }
+
+                        i++;
                     }
+
+
+
+
+
                 }
                 if (!encontrado) {
                     System.out.println("no se ha jugado ningun partido entre " + eq1 + " y " + eq2);
@@ -521,9 +546,10 @@ public class MenuCopaAmerica {
         System.out.println(equipos.toString());
         System.out.println(
                 "//////////////////////////////////////////////////////////estructura de partidos//////////////////////////////////////////////////////////");
-        for (Integer indice : partidos.keySet()) {
-            System.out.println(indice + ") " + partidos.get(indice).toString());
+        for (ClavePartido indice : partidos.keySet()) {
+            System.out.println("  -->  "+indice + partidos.get(indice).toString());
         }
+
     }
 
     public static void actualizarLog(String cad) {

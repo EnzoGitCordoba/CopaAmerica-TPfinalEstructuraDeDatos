@@ -94,7 +94,7 @@ public class Partido {
 
     public String toString() {
         return eq1 + " [" + golesE1 + " - " + golesE2 + "] " + eq2
-                + " INSTANCIA: " + instancia + ", ciudad: " + ciudad + ", estadio: " + estadio;
+                + " INSTANCIA: " + instancia + ", ciudad: " + ciudad + ", estadio: " + estadio + "";
     }
 
     public String resultado() {
@@ -106,9 +106,9 @@ public class Partido {
         return cad;
     }
 
-    public int getClavePartido() {
-        int hash = clave.hashCode();
-        return hash;
+    public ClavePartido getClavePartido() {
+
+        return clave;
     }
 
     public boolean compararEquipos(String e1, String e2) {
