@@ -291,13 +291,11 @@ public class MenuCopaAmerica {
             System.out.println("ingrese el nombre del equipo 2:");
             eq2 = dato.nextLine().toUpperCase();
             if (equipos.pertenece(new Equipo(eq2))) {
-                Partido unPartido = new Partido(eq1, eq2);
-                if (partidos.containsKey(unPartido.getClavePartido())) {
-                    System.out.println("el partido ya se encuentra cargado");
-                } else {
-                    System.out.println("partido entre " + eq1 + " y " + eq2);
-                    System.out.println("ingrese la instancia del partido");
-                    instancia = dato.nextLine().toUpperCase();
+
+                System.out.println("ingrese la instancia del partido (grupos , cuartos , semifinal , final )");
+                instancia = dato.nextLine().toUpperCase();
+                if ((instancia.equals("GRUPOS")) || ((instancia.equals("CUARTOS")) || ((instancia.equals("SEMIFINAL")) || ((instancia.equals("FINAL")))))) {
+
                     System.out.println("ingrese la ciudad donde se jugo el partido");
                     ciudad = dato.nextLine().toLowerCase();
                     if (ciudades.existeVertice(new Ciudad(ciudad))) {
@@ -313,27 +311,53 @@ public class MenuCopaAmerica {
                             equipo2 = (Equipo) equipos.recuperar(new Equipo(eq2));
                             equipo1.actualizarEquipo(golesE1, golesE2);
                             equipo2.actualizarEquipo(golesE2, golesE1);
-                            Partido nuPartido = new Partido(eq1, eq2, instancia, ciudad, estadio, golesE1, golesE2);
 
-                           ClavePartido clave= nuPartido.getClavePartido();
-                            if (partidos.containsKey(clave)) {
-                                Lista listaPartidos = partidos.get(clave);
-                                listaPartidos.insertar(nuPartido, listaPartidos.longitud() + 1);
-                            } else {
-                                Lista listaPartidos = new Lista();
-                                listaPartidos.insertar(nuPartido, 1);
-                                partidos.put(clave, listaPartidos);
-                            }
 
-                            System.out.println("El partido fue cargado correctamente");
-                            textoLog = "se cargaron los datos del partido " + eq1 + "-" + eq2;
-                            actualizarLog(textoLog);
+
+
+                                                        Partido nuPartido = new Partido(eq1, eq2, instancia, ciudad, estadio, golesE1, golesE2);
+                                                        ClavePartido clave = nuPartido.getClavePartido();
+
+                                                        if (partidos.containsKey(clave)) {
+                                                            Lista listadepartidos = partidos.get(clave);
+                                                            int i=1;
+                                                            boolean bandera=false;
+                                                            Partido nuevoPartido;
+                                                                while((listadepartidos.recuperar(i)!=null)&&(!bandera)){
+                                                                    nuevoPartido= (Partido) listadepartidos.recuperar(i);
+
+                                                                    if(nuevoPartido.getInstancia().equals(instancia)){
+                                                                        bandera=true;
+                                                                        System.out.println("ya existe un partido entre esos equipos con esa instancia ");
+                                                                    }
+                                                                    i++;
+                                                                }
+
+                                                                if(bandera!=true){
+                                                                    listadepartidos.insertar(nuPartido,listadepartidos.longitud()+1);
+                                                                    System.out.println("partido entre " + eq1 + " y " + eq2);
+                                                                    System.out.println("El partido fue cargado correctamente");
+                                                                }
+
+                                                        } else {
+                                                            Lista listaPartidos = new Lista();
+                                                            listaPartidos.insertar(nuPartido, 1);
+                                                            partidos.put(clave, listaPartidos);
+                                                            System.out.println("partido entre " + eq1 + " y " + eq2);
+                                                            System.out.println("El partido fue cargado correctamente.");
+                                                        }
+
+                                                        textoLog = "se cargaron los datos del partido " + eq1 + "-" + eq2;
+                                                        actualizarLog(textoLog);
+
                         } else {
                             System.out.println("la ciudad " + ciudad + " NO es sede de la copa");
                         }
                     } else {
                         System.out.println("la ciudad " + ciudad + " NO se encuentra cargada");
                     }
+                } else {
+                    System.out.println("la instancia ingresada no fue valida ");
                 }
             } else {
                 System.out.println(" el equipo 2 NO se encuentra cargado");
@@ -342,6 +366,7 @@ public class MenuCopaAmerica {
             System.out.println(" el equipo 1 NO se encuentra cargado");
         }
     }
+
 
     public static void consultaEquipos() {
         String pais = "", opcion = "", min = "", max = "";
@@ -396,21 +421,18 @@ public class MenuCopaAmerica {
                     ClavePartido clave = indice.next();
 
                     Lista listadepartidos = partidos.get(clave);
-                    int i=0;
+                    int i = 0;
                     Partido nuevoPartido;
-                    while((listadepartidos.recuperar(i)!=null)&&(!encontrado)){
-                        nuevoPartido= (Partido) listadepartidos.recuperar(i);
+                    while ((listadepartidos.recuperar(i) != null) && (!encontrado)) {
+                        nuevoPartido = (Partido) listadepartidos.recuperar(i);
 
-                        if(nuevoPartido.compararEquipos(eq1,eq2)){
-                            encontrado=true;
+                        if (nuevoPartido.compararEquipos(eq1, eq2)) {
+                            encontrado = true;
                             System.out.println(nuevoPartido.toString());
                         }
 
                         i++;
                     }
-
-
-
 
 
                 }
@@ -547,7 +569,7 @@ public class MenuCopaAmerica {
         System.out.println(
                 "//////////////////////////////////////////////////////////estructura de partidos//////////////////////////////////////////////////////////");
         for (ClavePartido indice : partidos.keySet()) {
-            System.out.println("  -->  "+indice + partidos.get(indice).toString());
+            System.out.println("  -->  " + indice + partidos.get(indice).toString());
         }
 
     }
