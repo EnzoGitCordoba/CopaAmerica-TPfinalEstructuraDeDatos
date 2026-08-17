@@ -18,7 +18,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     public GrafoEtiquetado cargaCiudades() {
         try {
             archivoLectura = new FileReader(
-                    "C:\\Users\\enzos\\IdeaProjects\\TpCopaAmericaEnzo\\src\\ListaCiudades.txt");
+                    "src/ListaCiudades.txt");
             String linea, valor, nombreCiudad = "";
             boolean alojamiento, sedeCopa;
             if (archivoLectura.ready()) {
@@ -63,7 +63,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     public ArbolAVL cargaEquipos() {
         try {
             archivoLectura = new FileReader(
-                    "C:\\Users\\enzos\\IdeaProjects\\TpCopaAmericaEnzo\\src\\ListaEquipos.txt");
+                    "src/ListaEquipos.txt");
             String linea, valor, nombrePais = "", director = "", grupo = "";
             if (archivoLectura.ready()) {
                 lector = new BufferedReader(archivoLectura);
@@ -102,7 +102,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     public HashMap<Integer, Partido> cargaPartidos() {
         try {
             archivoLectura = new FileReader(
-                    "C:\\Users\\enzos\\IdeaProjects\\TpCopaAmericaEnzo\\src\\listaPartidos.txt");
+                    "src/listaPartidos.txt");
             String linea, eq1 = "", eq2 = "", instancia = "", ciudad = "", estadio = "", valor = "";
             int golE1 = 0, golE2 = 0;
             if (archivoLectura.ready()) {
@@ -159,7 +159,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     public void cargaRutas(GrafoEtiquetado ciudades) {
         try {
             archivoLectura = new FileReader(
-                    "C:\\Users\\enzos\\IdeaProjects\\TpCopaAmericaEnzo\\src\\ListaRutas.txt");
+                    "src/ListaRutas.txt");
             String linea, valor, origen = "", destino = "";
             int tiempoEstimado = 0;
             if (archivoLectura.ready()) {
