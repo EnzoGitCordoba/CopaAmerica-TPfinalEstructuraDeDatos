@@ -1,6 +1,5 @@
 INICIO DEL SISTEMA
-se modifico de la ciudad dallasla opcion 3
-se modifico de la ciudad dallasla opcion 1
-se modifico de la ciudad dallasla opcion 1
-se modifico de la ciudad dallasla opcion 3
-se modifico de la ciudad dallasla opcion 2
+se modifico de la ciudad denverla opcion 1
+
+se modifico de la ciudad denverla opcion 3
+
