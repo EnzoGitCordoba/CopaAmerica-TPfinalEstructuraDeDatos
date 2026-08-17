@@ -13,7 +13,7 @@ LAS VEGAS;true;true
 FORT WHORT;false;false
 COLUMBUS;true;false
 CHARLOTTE;false;false
-SAN FRANCISO;true;true
+SAN FRANCISCO;true;true
 INDIANAPOLIS;true;false
 SEATTLE;true;false
 DENVER;true;false
