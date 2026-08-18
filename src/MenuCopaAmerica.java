@@ -51,7 +51,8 @@ public class MenuCopaAmerica {
                     consultaPartidos();// buscar si un partido se jugo entre 2 equipos
                     break;
                 case "6":
-                    consultaViajes();// buscar caminos segun una ciudad origen y una ciudad destino
+
+                consultaViajes();// buscar caminos segun una ciudad origen y una ciudad destino
                     break;
                 case "7":
                     listadoEquipos();// listar los equipos de mayor a menor segun goles a favor
@@ -459,7 +460,7 @@ public class MenuCopaAmerica {
             do {
                 System.out.println("1. obtiene el camino de menor tiempo");
                 System.out.println("2. obtiene el camino mas corto");
-                System.out.println("3. obtiene el camino mas corto si pasar por una ciudad");
+                System.out.println("3. obtiene el camino mas corto sin pasar por una ciudad");
                 System.out.println("4. todos los posibles caminos");
                 System.out.println("5. para salir");
                 opcion = dato.next();

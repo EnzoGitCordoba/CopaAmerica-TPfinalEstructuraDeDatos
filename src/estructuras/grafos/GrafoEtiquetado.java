@@ -390,25 +390,22 @@ public class GrafoEtiquetado {
             camino.insertar(nodoOrigen.getElem(), camino.longitud() + 1);
             NodoAdy siguiente = nodoOrigen.getPrimerAdy();
             while (siguiente != null) {
+                double tiempoArco = tiempo + (int) siguiente.getEtiqueta(); // valor propio de ESTE arco
+
                 if (siguiente.getVertice().getElem().equals(nodoDestino.getElem())) {
-                    tiempo += (int) siguiente.getEtiqueta();
-                    if (menorTiempo[0] == 0 || tiempo < menorTiempo[0]) {
+                    if (menorTiempo[0] == 0 || tiempoArco < menorTiempo[0]) {
                         caminoCorto = camino.clone();
-                        menorTiempo[0] = tiempo;
+                        menorTiempo[0] = tiempoArco;
                         caminoCorto.insertar(nodoDestino.getElem(), caminoCorto.longitud() + 1);
                     }
                 } else {
                     if (camino.localizar(siguiente.getVertice().getElem()) < 0) {
-                        if (menorTiempo[0] == 0 || tiempo < menorTiempo[0]) {
-                            tiempo += (int) siguiente.getEtiqueta();
-                            caminoCorto = caminoMenorTiempoDesde(siguiente.getVertice(), nodoDestino, tiempo,
-                                    menorTiempo, camino,
-                                    caminoCorto);
+                        if (menorTiempo[0] == 0 || tiempoArco < menorTiempo[0]) {
+                            caminoCorto = caminoMenorTiempoDesde(siguiente.getVertice(), nodoDestino, tiempoArco,
+                                    menorTiempo, camino, caminoCorto);
                             camino.eliminar(camino.longitud());
                         }
-
                     }
-
                 }
                 siguiente = siguiente.getSigAdyacente();
             }

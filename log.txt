@@ -1,3 +1,1 @@
 INICIO DEL SISTEMA
-se modifico del equipo COLOMBIA la opcion 3
-se cargaron los datos del partido COLOMBIA-ARGENTINA
