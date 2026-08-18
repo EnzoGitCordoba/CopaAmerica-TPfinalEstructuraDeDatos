@@ -1,4 +1,3 @@
 INICIO DEL SISTEMA
-se cargaron los datos del partido MEXICO-COLOMBIA
-se cargaron los datos del partido MEXICO-COLOMBIA
-se cargaron los datos del partido MEXICO-COLOMBIA
+se modifico del equipo COLOMBIA la opcion 3
+se cargaron los datos del partido COLOMBIA-ARGENTINA

@@ -389,9 +389,9 @@ public class MenuCopaAmerica {
                     }
                     break;
                 case "2":
-                    System.out.println("ingrese la cadena minima de la lista:");
+                    System.out.println("ingrese la letra minima de la lista:");
                     min = dato.next().toUpperCase();
-                    System.out.println("ingrese la cadena maxima de la lista:");
+                    System.out.println("ingrese la letra maxima de la lista:");
                     max = dato.next().toUpperCase();
                     System.out.println(equipos.listarPorRango(min, max));
                     break;
@@ -416,14 +416,12 @@ public class MenuCopaAmerica {
             System.out.println("ingrese el nombre del equipo 2:");
             eq2 = dato.nextLine().toUpperCase();
             if (equipos.pertenece(new Equipo(eq2))) {
-                while (indice.hasNext() && !encontrado) {
-
+                while (indice.hasNext()) {                    // ya no corta por encontrado
                     ClavePartido clave = indice.next();
-
                     Lista listadepartidos = partidos.get(clave);
-                    int i = 0;
+                    int i = 1;
                     Partido nuevoPartido;
-                    while ((listadepartidos.recuperar(i) != null) && (!encontrado)) {
+                    while (i <= listadepartidos.longitud()) {    // ya no corta por encontrado
                         nuevoPartido = (Partido) listadepartidos.recuperar(i);
 
                         if (nuevoPartido.compararEquipos(eq1, eq2)) {
@@ -433,8 +431,6 @@ public class MenuCopaAmerica {
 
                         i++;
                     }
-
-
                 }
                 if (!encontrado) {
                     System.out.println("no se ha jugado ningun partido entre " + eq1 + " y " + eq2);
