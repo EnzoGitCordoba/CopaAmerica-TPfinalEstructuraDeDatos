@@ -190,36 +190,32 @@ public class GrafoEtiquetado {
     }
 
     private void eliminarArcos(NodoAdy adyacente, Object elem) {
-        NodoAdy listaAdy = adyacente; // recorre la lista de adyacentes del vertice a eliminar y elimina los arcos que
-                                      // lo conectan con otros vertices
+        NodoAdy listaAdy = adyacente;
         while (listaAdy != null) {
 
-            NodoVert vertice = listaAdy.getVertice(); // agarra el vertice conectado al vertice a eliminar
-            NodoAdy ady = vertice.getPrimerAdy(); // agarra el primer adyacente del vertice conectado al vertice a
-                                                  // eliminar
+            NodoVert vertice = listaAdy.getVertice();
+            NodoAdy ady = vertice.getPrimerAdy();
 
-            while (ady != null && ady.getVertice().getElem().equals(elem)) { // elimnar todos los arcos que conectan el
-                                                                             // vertice a eliminar con el vertice
-                                                                             // conectado
+            while (ady != null && ady.getVertice().getElem().equals(elem)) {
                 vertice.setPrimerAdy(ady.getSigAdyacente());
                 ady = vertice.getPrimerAdy();
             }
 
             if (ady != null) {
-                NodoAdy anteriores = ady; // tengo una referncia al anterior para poder setear cuando encuentre el
-                                          // vertice a eliminar
-                ady = ady.getSigAdyacente(); // avanzo al siguiente adyacente
+                NodoAdy anteriores = ady;
+                ady = ady.getSigAdyacente();
                 while (ady != null) {
-                    if (ady.getVertice().getElem().equals(elem)) { // si encuentro el vertice a eliminar, seteo el
-                                                                   // anterior para que apunte al siguiente del actual
+                    if (ady.getVertice().getElem().equals(elem)) {
                         anteriores.setSigAdyacente(ady.getSigAdyacente());
                         ady = anteriores.getSigAdyacente();
-                    } else { // si no encuentro el vertice a eliminar, avanzo al siguiente adyacente
+                    } else {
                         anteriores = ady;
                         ady = ady.getSigAdyacente();
                     }
                 }
             }
+
+            listaAdy = listaAdy.getSigAdyacente(); // <-- esto faltaba
         }
     }
 
