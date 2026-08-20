@@ -2,12 +2,12 @@ import estructuras.conjuntistas.ArbolAVL;
 import estructuras.grafos.GrafoEtiquetado;
 import estructuras.lineales.Lista;
 
-import java.io.BufferedReader;        //
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;        // agrega metodos para leer con mayor comodidad readLine()
+import java.io.FileNotFoundException; //excepción que salta si el archivo no existe en la ruta indicada.
 import java.io.FileReader;  // nos permite leer un archivo. lee caracter a caracter.
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.StringTokenizer;
+import java.util.StringTokenizer;// clase  de Java para partir un String en pedazos ("tokens") usando un separador
 
 public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     private ArbolAVL equipos = new ArbolAVL();
@@ -19,18 +19,18 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
     public GrafoEtiquetado cargaCiudades() {
         try {
             archivoLectura = new FileReader(
-                    "src/ListaCiudades.txt");
+                    "src/ListaCiudades.txt");   // leo el archivo
             String linea, valor, nombreCiudad = "";
             boolean alojamiento, sedeCopa;
-            if (archivoLectura.ready()) {
+            if (archivoLectura.ready()) {   //si el archivo esta listo para ser leido
                 lector = new BufferedReader(archivoLectura);
-                while ((linea = lector.readLine()) != null) {
-                    split = new StringTokenizer(linea, ";");
+                while ((linea = lector.readLine()) != null) {  //leo una linea
+                    split = new StringTokenizer(linea, ";");  //separo por ";"
                     alojamiento = false;
                     sedeCopa = false;
                     for (int j = 0; j < 3; j++) {
-                        valor = (String) split.nextElement();
-                        if (split.hasMoreElements()) {
+                        valor = (String) split.nextElement(); //me muevo entre tokens
+                        if (split.hasMoreElements()) { // contabilizo token
                             switch (j) {
                                 case 0:
                                     nombreCiudad = valor;
@@ -139,7 +139,7 @@ public class Carga {  private GrafoEtiquetado ciudades = new GrafoEtiquetado();
                     }
                     Partido partido = new Partido(eq1.toUpperCase(), eq2.toUpperCase(), instancia, ciudad, estadio,
                             golE1,
-                            golE2);
+                            golE2); //tal vez deberia poner touppercase a cuidad, estadio e instancia , pero como controlo la carga desde el txt , no lo considero necesario en un primer momento. no encontrare JAmaiCA
                     ClavePartido clave= partido.getClavePartido();
 
                     if (mapa.containsKey(clave)) {

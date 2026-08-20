@@ -575,8 +575,8 @@ public class MenuCopaAmerica {
     }
 
     public static void actualizarLog(String cad) {
-        try (Writer w = new FileWriter("log.txt", true)) {
-            w.write(cad + "\r\n");
+        try (Writer w = new FileWriter("log.txt", true)) {  // creo un archivo log.txt
+            w.write(cad + "\r\n"); //escribo la cadena que vino por parametro y salto de linea
             w.close();
 
         } catch (IOException ex) {

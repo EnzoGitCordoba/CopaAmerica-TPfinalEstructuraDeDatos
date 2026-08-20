@@ -398,7 +398,7 @@ public class ArbolAVL {
             if (max.compareTo(n.getElem().toString()) >= 0) {//la rama der , debe ser listada? llamo con la rama der
                 listarPorRangoAux(n.getDerecho(), min, max, lis);
             }
-            //lo escribimos al final para que quede inorden
+
             if (min.compareTo(n.getElem().toString()) <= 0 && max.compareTo(n.getElem().toString()) >= 0) { //donde estoy parado , esta dentro del rango?  si es asi , lo listo
                 lis.insertar(n.getElem(), lis.longitud() + 1);
             }
