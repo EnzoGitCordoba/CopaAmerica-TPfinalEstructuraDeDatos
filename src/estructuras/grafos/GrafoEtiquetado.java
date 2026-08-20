@@ -1,21 +1,19 @@
 package estructuras.grafos;
 
-
 import estructuras.lineales.*;
 
 public class GrafoEtiquetado {
 
     private NodoVert inicio;
 
-    //constructor
+    // constructor
     public GrafoEtiquetado() {
         inicio = null;
     }
 
-
     //
     public boolean insertarVertice(Object nuevoVert) {
-        boolean encontrado = false; //suponemos que el elemento ya esta en el grafo
+        boolean encontrado = false; // suponemos que el elemento ya esta en el grafo
         NodoVert aux = this.ubicarVertice(nuevoVert);
         if (aux == null) {
             this.inicio = new NodoVert(nuevoVert, this.inicio, null);
@@ -129,6 +127,14 @@ public class GrafoEtiquetado {
             }
             siguienteAdy.setSigAdyacente(siguiente);
         }
+
+        // otra opcion seria
+        // nodoOrigen.setPrimerAdy(new NodoAdy(nodoDestino, nodoOrigen.getPrimerAdy(),
+        // etiqueta));
+        // nodoDestino.setPrimerAdy(new NodoAdy(nodoOrigen, nodoDestino.getPrimerAdy(),
+        // etiqueta));
+        // esto agregaria el nuevo enlace al principio de la lista de adyacentes, en
+        // lugar de al final
     }
 
     public String toString() {
@@ -341,24 +347,54 @@ public class GrafoEtiquetado {
         return caminoCorto;
     }
 
-    //busco en profundidad
+    // busco en profundidad
     private Lista caminoCortoDesde(NodoVert n, NodoVert destino, Lista visitado, Lista caminoCorto) {
         if (n != null) {
             boolean encontrado = false;
-            visitado.insertar(n.getElem(), visitado.longitud() + 1);  // inserto el nodo en la lista
-            NodoAdy siguiente = n.getPrimerAdy();  //me muevo al siguiente ady
-            while (siguiente != null && !encontrado) {        //mientras tenga ady y no lo encuentre hacer
-                if (siguiente.getVertice().getElem().equals(destino.getElem())) {        // si lo encuentro rompo el while y pregunto
+            visitado.insertar(n.getElem(), visitado.longitud() + 1); // inserto el nodo en la lista
+            NodoAdy siguiente = n.getPrimerAdy(); // me muevo al siguiente ady
+            while (siguiente != null && !encontrado) { // mientras tenga ady y no lo encuentre hacer
+                if (siguiente.getVertice().getElem().equals(destino.getElem())) { // si lo encuentro rompo el while y
+                                                                                  // pregunto
                     encontrado = true;
-                    if (caminoCorto.longitud() == 0 || visitado.longitud() < caminoCorto.longitud() - 1) {  // si este es el camino mas corto , encontrado hasta el momento
+                    if (caminoCorto.longitud() == 0 || visitado.longitud() < caminoCorto.longitud() - 1) { // si este es
+                                                                                                           // el camino
+                                                                                                           // mas corto
+                                                                                                           // ,
+                                                                                                           // encontrado
+                                                                                                           // hasta el
+                                                                                                           // momento
                         caminoCorto = visitado.clone(); // clono la lista de las visitas hasta el momento
-                        caminoCorto.insertar(destino.getElem(), visitado.longitud() + 1); //agrego mi ultimo elemento (destino)
+                        caminoCorto.insertar(destino.getElem(), visitado.longitud() + 1); // agrego mi ultimo elemento
+                                                                                          // (destino)
                     }
-                } else {  //sino
-                    if (visitado.localizar(siguiente.getVertice().getElem()) < 0) { // analizo si el nodo donde estoy parado ya fue visitado (para no dar vueltas en circulo)
-                        if (visitado.longitud() < caminoCorto.longitud() - 1 || caminoCorto.longitud() == 0) { //Si el camino de visitado sigue siendo mas corto que caminoCorto o no tengo un camino ya , sigo buscando
-                            caminoCorto = caminoCortoDesde(siguiente.getVertice(), destino, visitado, caminoCorto); // avanzo en el grafo
-                            visitado.eliminar(visitado.longitud());  // saco el nodo visitado para limpiar esta lista auxiliar
+                } else { // sino
+                    if (visitado.localizar(siguiente.getVertice().getElem()) < 0) { // analizo si el nodo donde estoy
+                                                                                    // parado ya fue visitado (para no
+                                                                                    // dar vueltas en circulo)
+                        if (visitado.longitud() < caminoCorto.longitud() - 1 || caminoCorto.longitud() == 0) { // Si el
+                                                                                                               // camino
+                                                                                                               // de
+                                                                                                               // visitado
+                                                                                                               // sigue
+                                                                                                               // siendo
+                                                                                                               // mas
+                                                                                                               // corto
+                                                                                                               // que
+                                                                                                               // caminoCorto
+                                                                                                               // o no
+                                                                                                               // tengo
+                                                                                                               // un
+                                                                                                               // camino
+                                                                                                               // ya ,
+                                                                                                               // sigo
+                                                                                                               // buscando
+                            caminoCorto = caminoCortoDesde(siguiente.getVertice(), destino, visitado, caminoCorto); // avanzo
+                                                                                                                    // en
+                                                                                                                    // el
+                                                                                                                    // grafo
+                            visitado.eliminar(visitado.longitud()); // saco el nodo visitado para limpiar esta lista
+                                                                    // auxiliar
                         }
 
                     }
@@ -388,7 +424,7 @@ public class GrafoEtiquetado {
     }
 
     private Lista caminoMenorTiempoDesde(NodoVert nodoOrigen, NodoVert nodoDestino, Double tiempo,
-                                         Double[] menorTiempo, Lista camino, Lista caminoCorto) {
+            Double[] menorTiempo, Lista camino, Lista caminoCorto) {
         if (nodoOrigen != null) {
             camino.insertar(nodoOrigen.getElem(), camino.longitud() + 1);
             NodoAdy siguiente = nodoOrigen.getPrimerAdy();
@@ -436,7 +472,7 @@ public class GrafoEtiquetado {
     }
 
     private Lista caminoCortoAux(NodoVert nodoOrigen, NodoVert nodoDestino, NodoVert ciudadEvitada, Lista camino,
-                                 Lista caminoCorto) {
+            Lista caminoCorto) {
         if (nodoOrigen != null) {
             boolean encontrado = false;
             camino.insertar(nodoOrigen.getElem(), camino.longitud() + 1);
@@ -496,10 +532,11 @@ public class GrafoEtiquetado {
     }
 
     public Object obtenerVertice(Object nombrePais) {
-        // creo este metodo publico para acceder desde el menu , ya que la busqueda se hace en privado
-      Object retorno = null;
-              if( (buscarVertice(inicio, nombrePais)!= null )){
-            retorno= buscarVertice(inicio, nombrePais).getElem();
+        // creo este metodo publico para acceder desde el menu , ya que la busqueda se
+        // hace en privado
+        Object retorno = null;
+        if ((buscarVertice(inicio, nombrePais) != null)) {
+            retorno = buscarVertice(inicio, nombrePais).getElem();
         }
 
         return retorno;
