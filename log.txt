@@ -1,1 +1,113 @@
 INICIO DEL SISTEMA
+-------------------------------------------//EQUIPOS//-----------------------------------------------------------------
+
+equipo: ARGENTINA | director tecnico: scaloni | grupo: A | puntos totales: 16 | goles a favor: 9 | goles en contra: 1 | diferencia de goles: 8
+equipo: BOLIVIA | director tecnico: zago | grupo: C | puntos totales: 0 | goles a favor: 0 | goles en contra: 7 | diferencia de goles: -7
+equipo: BRASIL | director tecnico: dorival | grupo: D | puntos totales: 5 | goles a favor: 4 | goles en contra: 1 | diferencia de goles: 3
+equipo: CANADA | director tecnico: marsch | grupo: A | puntos totales: 5 | goles a favor: 2 | goles en contra: 5 | diferencia de goles: -3
+equipo: CHILE | director tecnico: gareca | grupo: A | puntos totales: 2 | goles a favor: 0 | goles en contra: 1 | diferencia de goles: -1
+equipo: COLOMBIA | director tecnico: lorenzo | grupo: D | puntos totales: 9 | goles a favor: 6 | goles en contra: 2 | diferencia de goles: 4
+equipo: COSTA RICA | director tecnico: alfaro | grupo: D | puntos totales: 1 | goles a favor: 0 | goles en contra: 3 | diferencia de goles: -3
+equipo: ECUADOR | director tecnico: sanchez | grupo: B | puntos totales: 4 | goles a favor: 5 | goles en contra: 4 | diferencia de goles: 1
+equipo: ESTADOS UNIDOS | director tecnico: berhalter | grupo: C | puntos totales: 3 | goles a favor: 3 | goles en contra: 2 | diferencia de goles: 1
+equipo: JAMAICA | director tecnico: hallgrimsson | grupo: B | puntos totales: 0 | goles a favor: 1 | goles en contra: 4 | diferencia de goles: -3
+equipo: MEXICO | director tecnico: lozano | grupo: B | puntos totales: 3 | goles a favor: 1 | goles en contra: 1 | diferencia de goles: 0
+equipo: PANAMA | director tecnico: christensen | grupo: C | puntos totales: 3 | goles a favor: 3 | goles en contra: 4 | diferencia de goles: -1
+equipo: PARAGUAY | director tecnico: garnero | grupo: D | puntos totales: 0 | goles a favor: 2 | goles en contra: 6 | diferencia de goles: -4
+equipo: PERU | director tecnico: fossati | grupo: A | puntos totales: 1 | goles a favor: 0 | goles en contra: 3 | diferencia de goles: -3
+equipo: URUGUAY | director tecnico: bielsa | grupo: C | puntos totales: 7 | goles a favor: 8 | goles en contra: 2 | diferencia de goles: 6
+equipo: VENEZUELA | director tecnico: batista | grupo: B | puntos totales: 7 | goles a favor: 4 | goles en contra: 2 | diferencia de goles: 2
+-------------------------------------------------------------//MAPA//--------------------------------------------------------------------
+
+Vertice: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  arcos: [ etiqueta: 600 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 305 enlace: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 302 enlace: NOMBRE:houston, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 250 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 277 enlace: NOMBRE:filadelfia, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 428 enlace: NOMBRE:seattle, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 285 enlace: NOMBRE:denver, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 104 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 101 enlace: NOMBRE:dallas, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 412 enlace: NOMBRE:chicago, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:denver, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 109 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 440 enlace: NOMBRE:seattle, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 285 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 292 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:seattle, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 387 enlace: NOMBRE:columbus, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 99 enlace: NOMBRE:charlotte, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 440 enlace: NOMBRE:denver, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 428 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:indianapolis, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 299 enlace: NOMBRE:austin, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 100 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 121 enlace: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 420 enlace: NOMBRE:columbus, ALOJAMIENTO: true, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  arcos: [ etiqueta: 136 enlace: NOMBRE:san antonio, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 250 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 100 enlace: NOMBRE:indianapolis, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 69 enlace: NOMBRE:charlotte, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 109 enlace: NOMBRE:denver, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 217 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 302 enlace: NOMBRE:chicago, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:charlotte, ALOJAMIENTO: false, SEDE DE LA COPA: false  arcos: [ etiqueta: 69 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 99 enlace: NOMBRE:seattle, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 100 enlace: NOMBRE:chicago, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:columbus, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 240 enlace: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 300 enlace: NOMBRE:phoenix, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 387 enlace: NOMBRE:seattle, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 420 enlace: NOMBRE:indianapolis, ALOJAMIENTO: true, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:fort whort, ALOJAMIENTO: false, SEDE DE LA COPA: false  arcos: [ etiqueta: 120 enlace: NOMBRE:san antonio, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 165 enlace: NOMBRE:austin, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 444 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  arcos: [ etiqueta: 80 enlace: NOMBRE:phoenix, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 135 enlace: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 159 enlace: NOMBRE:houston, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 406 enlace: NOMBRE:filadelfia, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 444 enlace: NOMBRE:fort whort, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 271 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 104 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 217 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 205 enlace: NOMBRE:chicago, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:austin, ALOJAMIENTO: false, SEDE DE LA COPA: true  arcos: [ etiqueta: 165 enlace: NOMBRE:fort whort, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 212 enlace: NOMBRE:phoenix, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 299 enlace: NOMBRE:indianapolis, ALOJAMIENTO: true, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:san jose, ALOJAMIENTO: false, SEDE DE LA COPA: false  arcos: [ etiqueta: 222 enlace: NOMBRE:san diego, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 333 enlace: NOMBRE:dallas, ALOJAMIENTO: false, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:dallas, ALOJAMIENTO: false, SEDE DE LA COPA: true  arcos: [ etiqueta: 150 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 111 enlace: NOMBRE:san diego, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 333 enlace: NOMBRE:san jose, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 101 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:san diego, ALOJAMIENTO: false, SEDE DE LA COPA: true  arcos: [ etiqueta: 482 enlace: NOMBRE:san antonio, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 111 enlace: NOMBRE:dallas, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 222 enlace: NOMBRE:san jose, ALOJAMIENTO: false, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:san antonio, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 120 enlace: NOMBRE:fort whort, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 136 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 482 enlace: NOMBRE:san diego, ALOJAMIENTO: false, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:filadelfia, ALOJAMIENTO: true, SEDE DE LA COPA: false  arcos: [ etiqueta: 25 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 277 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 406 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:phoenix, ALOJAMIENTO: false, SEDE DE LA COPA: false  arcos: [ etiqueta: 212 enlace: NOMBRE:austin, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 300 enlace: NOMBRE:columbus, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 80 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 500 enlace: NOMBRE:houston, ALOJAMIENTO: false, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:houston, ALOJAMIENTO: false, SEDE DE LA COPA: false  arcos: [ etiqueta: 302 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 159 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 500 enlace: NOMBRE:phoenix, ALOJAMIENTO: false, SEDE DE LA COPA: false  ]
+Vertice: NOMBRE:chicago, ALOJAMIENTO: true, SEDE DE LA COPA: true  arcos: [ etiqueta: 205 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 100 enlace: NOMBRE:charlotte, ALOJAMIENTO: false, SEDE DE LA COPA: false  ], [ etiqueta: 302 enlace: NOMBRE:san francisco, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 412 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  arcos: [ etiqueta: 450 enlace: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 240 enlace: NOMBRE:columbus, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 305 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 121 enlace: NOMBRE:indianapolis, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 135 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ]
+Vertice: NOMBRE:nueva york, ALOJAMIENTO: true, SEDE DE LA COPA: true  arcos: [ etiqueta: 450 enlace: NOMBRE:los angeles, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 25 enlace: NOMBRE:filadelfia, ALOJAMIENTO: true, SEDE DE LA COPA: false  ], [ etiqueta: 150 enlace: NOMBRE:dallas, ALOJAMIENTO: false, SEDE DE LA COPA: true  ], [ etiqueta: 600 enlace: NOMBRE:washington, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 271 enlace: NOMBRE:las vegas, ALOJAMIENTO: true, SEDE DE LA COPA: true  ], [ etiqueta: 292 enlace: NOMBRE:denver, ALOJAMIENTO: true, SEDE DE LA COPA: false  ]
+
+-------------------------------------------------------------//PARTIDOS//----------------------------------------------------------------
+
+equipo uno: CHILE equipo dos: PERU
+: [CHILE [0 - 0] PERU INSTANCIA: GRUPOS, ciudad: Hard Rock, estadio: CHICAGO] 
+ 
+equipo uno: MEXICO equipo dos: VENEZUELA
+: [MEXICO [0 - 1] VENEZUELA INSTANCIA: GRUPOS, ciudad: Inter&Co, estadio: LAS VEGAS] 
+ 
+equipo uno: BOLIVIA equipo dos: URUGUAY
+: [BOLIVIA [0 - 5] URUGUAY INSTANCIA: GRUPOS, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: ECUADOR equipo dos: VENEZUELA
+: [ECUADOR [1 - 2] VENEZUELA INSTANCIA: GRUPOS, ciudad: Hard Rock, estadio: CHICAGO] 
+ 
+equipo uno: ARGENTINA equipo dos: CANADA
+: [ARGENTINA [2 - 0] CANADA INSTANCIA: GRUPOS, ciudad: Inter&Co, estadio: LAS VEGAS,ARGENTINA [2 - 0] CANADA INSTANCIA: SEMIFINAL, ciudad: Hard Rock, estadio: CHICAGO] 
+ 
+equipo uno: COLOMBIA equipo dos: URUGUAY
+: [COLOMBIA [1 - 0] URUGUAY INSTANCIA: SEMIFINAL, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: ARGENTINA equipo dos: PERU
+: [ARGENTINA [2 - 0] PERU INSTANCIA: GRUPOS, ciudad: Mercedes-Benz, estadio: AUSTIN] 
+ 
+equipo uno: BOLIVIA equipo dos: ESTADOS UNIDOS
+: [BOLIVIA [0 - 2] ESTADOS UNIDOS INSTANCIA: GRUPOS, ciudad: Mercedes-Benz, estadio: AUSTIN] 
+ 
+equipo uno: BRASIL equipo dos: PARAGUAY
+: [BRASIL [4 - 1] PARAGUAY INSTANCIA: GRUPOS, ciudad: Inter&Co, estadio: LAS VEGAS] 
+ 
+equipo uno: BRASIL equipo dos: URUGUAY
+: [BRASIL [0 - 0] URUGUAY INSTANCIA: CUARTOS DE FINAL, ciudad: Hard Rock, estadio: CHICAGO] 
+ 
+equipo uno: CANADA equipo dos: PERU
+: [CANADA [1 - 0] PERU INSTANCIA: GRUPOS, ciudad: Mercedes-Benz, estadio: AUSTIN] 
+ 
+equipo uno: CANADA equipo dos: CHILE
+: [CANADA [0 - 0] CHILE INSTANCIA: GRUPOS, ciudad: Inter&Co, estadio: LAS VEGAS] 
+ 
+equipo uno: ARGENTINA equipo dos: COLOMBIA
+: [ARGENTINA [1 - 0] COLOMBIA INSTANCIA: FINAL, ciudad: Hard Rock, estadio: CHICAGO] 
+ 
+equipo uno: ARGENTINA equipo dos: CHILE
+: [ARGENTINA [1 - 0] CHILE INSTANCIA: GRUPOS, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: ECUADOR equipo dos: JAMAICA
+: [ECUADOR [3 - 1] JAMAICA INSTANCIA: GRUPOS, ciudad: Levi's, estadio: WASHINGTON] 
+ 
+equipo uno: PANAMA equipo dos: URUGUAY
+: [PANAMA [1 - 3] URUGUAY INSTANCIA: GRUPOS, ciudad: Inter&Co, estadio: LAS VEGAS] 
+ 
+equipo uno: BRASIL equipo dos: COSTA RICA
+: [BRASIL [0 - 0] COSTA RICA INSTANCIA: GRUPOS, ciudad: Levi's, estadio: WASHINGTON] 
+ 
+equipo uno: COLOMBIA equipo dos: PARAGUAY
+: [COLOMBIA [2 - 1] PARAGUAY INSTANCIA: GRUPOS, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: CANADA equipo dos: VENEZUELA
+: [CANADA [1 - 1] VENEZUELA INSTANCIA: CUARTOS DE FINAL, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: COLOMBIA equipo dos: COSTA RICA
+: [COLOMBIA [3 - 0] COSTA RICA INSTANCIA: GRUPOS, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: ARGENTINA equipo dos: ECUADOR
+: [ARGENTINA [1 - 1] ECUADOR INSTANCIA: CUARTOS DE FINAL, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: JAMAICA equipo dos: MEXICO
+: [JAMAICA [0 - 1] MEXICO INSTANCIA: GRUPOS, ciudad: Metlife Stadium, estadio: NUEVA YORK] 
+ 
+equipo uno: ESTADOS UNIDOS equipo dos: PANAMA
+: [ESTADOS UNIDOS [1 - 2] PANAMA INSTANCIA: GRUPOS, ciudad: Mercedes-Benz, estadio: AUSTIN] 
+ 

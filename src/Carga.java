@@ -2,9 +2,9 @@ import estructuras.conjuntistas.ArbolAVL;
 import estructuras.grafos.GrafoEtiquetado;
 import estructuras.lineales.Lista;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader;        //
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileReader;  // nos permite leer un archivo. lee caracter a caracter.
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.StringTokenizer;

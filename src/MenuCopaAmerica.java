@@ -24,6 +24,9 @@ public class MenuCopaAmerica {
         partidos = cargaDatos.cargaPartidos();
         cargaDatos.cargaRutas(ciudades);
         limpiarLog();
+
+
+
         mostrarMenu();
     }
 
@@ -582,8 +585,32 @@ public class MenuCopaAmerica {
     }
 
     public static void limpiarLog() {
+
         try (Writer w = new FileWriter("log.txt")) {
+            String log="";
             w.write("INICIO DEL SISTEMA\r\n");
+
+            actualizarLog(log);
+            log = "-------------------------------------------------------------//EQUIPOS//-----------------------------------------------------------------\n";
+            actualizarLog(log);
+            Lista listaAux = equipos.listar();
+            while (!listaAux.esVacia()) {
+                Equipo aux = (Equipo) listaAux.recuperar(1);
+                log = aux.datosEquipo();
+                actualizarLog(log);
+                listaAux.eliminar(1);
+            }
+            log = "-------------------------------------------------------------//MAPA//--------------------------------------------------------------------\n";
+            actualizarLog(log);
+            log = ciudades.toString();
+            actualizarLog(log);
+            log = "-------------------------------------------------------------//PARTIDOS//----------------------------------------------------------------\n";
+            actualizarLog(log);
+            for (ClavePartido indice : partidos.keySet()) {
+                log = indice + ": " + partidos.get(indice).toString();
+                actualizarLog(log);
+            }
+
         } catch (IOException ex) {
             System.err.println("Error leyendo o escribiendo en algun archivo.");
         }
