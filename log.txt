@@ -111,3 +111,9 @@ equipo uno: JAMAICA equipo dos: MEXICO
 equipo uno: ESTADOS UNIDOS equipo dos: PANAMA
 : [ESTADOS UNIDOS [1 - 2] PANAMA INSTANCIA: GRUPOS, ciudad: Mercedes-Benz, estadio: AUSTIN] 
  
+se elimino el equipo PERU
+se elimino el equipo VENEZUELA
+se elimino el equipo ECUADOR
+se elimino el equipo COLOMBIA
+se elimino el equipo CHILE
+se elimino el equipo ARGENTINA

@@ -166,7 +166,7 @@ public class GrafoEtiquetado {
         return cad;
     }
 
-    public boolean eliminarVertice(Object eliminado) {
+    public boolean eliminarVertice(Object eliminado) { //recorremos 2 veces , problema de eficiencia
         boolean encontrado = false;
         NodoVert nodoBuscado = buscarVertice(this.inicio, eliminado), nodoSiguiente = this.inicio.getSigVertice(),
                 anterior = this.inicio;
@@ -183,7 +183,7 @@ public class GrafoEtiquetado {
             if (this.inicio.getElem().equals(eliminado)) {
                 if (this.inicio.getSigVertice() == null) {
                     vaciar();
-                } else {
+                } else { // hace lo mismo -------------------------------------------------------------------------------------------------------------
                     this.inicio = this.inicio.getSigVertice();
                 }
             } else {
@@ -366,7 +366,7 @@ public class GrafoEtiquetado {
                         caminoCorto.insertar(destino.getElem(), visitado.longitud() + 1); // agrego mi ultimo elemento
                                                                                           // (destino)
                     }
-                } else { // sino
+                } else { // sino  en ambos casos hacemos la misma pregunta , podriamos sacarla y englobar las 2 ramas
                     if (visitado.localizar(siguiente.getVertice().getElem()) < 0) { // analizo si el nodo donde estoy
                                                                                     // parado ya fue visitado (para no
                                                                                     // dar vueltas en circulo)

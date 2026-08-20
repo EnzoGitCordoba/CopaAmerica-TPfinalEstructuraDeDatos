@@ -109,11 +109,13 @@ public class ArbolAVL {
         if (this.raiz != null) {// si tengo un arbol analizo.
             if (this.raiz.getElem().compareTo(elemento) == 0) { // si el elemento a eliminar esta en la raiz
                 exito = true;
-                if (this.raiz.getIzquierdo() == null && this.raiz.getDerecho() == null) { //pregunto si tiene hijos , de no tener la raiz es nula  y exito true
+                if (this.raiz.getIzquierdo() == null && this.raiz.getDerecho() == null) { //pregunto si no tiene hijos ,. la raiz es nula  y exito true
                     this.raiz = null;
-                } else { //si tiene hijos , analizo como eliminar
-                    borrarNodo(this.raiz);
-                    this.raiz = analizarBalance(this.raiz);
+                } else { //sino . tiene hijos , analizo como eliminar
+//                    borrarNodo(this.raiz);
+//                    this.raiz = analizarBalance(this.raiz);
+                    this.raiz = borrarNodo(this.raiz);
+
                 }
             } else {
                 exito = eliminarAux(this.raiz, elemento);  //en el caso de que el elemento a eliminar no sea la raiz analizo si esta y elimino
@@ -155,8 +157,9 @@ public class ArbolAVL {
                             n.setDerecho(null);
                             n.recalcularAltura();
                         } else {
-                            borrarNodo(hijo);
-                            n.setDerecho(analizarBalance(hijo));
+//                            borrarNodo(hijo);
+//                            n.setDerecho(analizarBalance(hijo));
+                            n.setDerecho(borrarNodo(hijo));
                         }
                     } else {
                         exito = eliminarAux(n.getDerecho(), elemento);
